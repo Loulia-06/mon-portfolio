@@ -93,7 +93,12 @@
       "Divers"
     ],
     "schema": null,
-    "screenshots": [],
+    "screenshots": [
+      "https://raw.githubusercontent.com/Loulia-06/dev-learning-portfolio/main/projets-complets/recette-du-monde/screenshots/accueil.png",
+      "https://raw.githubusercontent.com/Loulia-06/dev-learning-portfolio/main/projets-complets/recette-du-monde/screenshots/connexion.png",
+      "https://raw.githubusercontent.com/Loulia-06/dev-learning-portfolio/main/projets-complets/recette-du-monde/screenshots/creation-recette.png",
+      "https://raw.githubusercontent.com/Loulia-06/dev-learning-portfolio/main/projets-complets/recette-du-monde/screenshots/details-recette.png"
+    ],
     "videoUrl": null,
     "demoUrl": null,
     "repoLinks": [
