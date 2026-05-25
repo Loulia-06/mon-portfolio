@@ -1,1 +1,108 @@
-[]
+[
+  {
+    "id": "exo1-decouverte",
+    "title": "Exo 1",
+    "category": "backend",
+    "path": "backend/api-rest/exo1-decouverte",
+    "lang": "Node.js",
+    "level": "débutant",
+    "date": "2026-05",
+    "description": "Découvrir et comprendre le fonctionnement d'une API REST en construisant\nune API de gestion de notes connectée à une base de données MongoDB Atlas.\n\n---",
+    "whatILearned": "",
+    "notions": [
+      "C'est quoi une API et un serveur",
+      "Les verbes HTTP : GET, POST, PUT, DELETE",
+      "La structure d'un fichier server.js",
+      "Le framework Express.js",
+      "Les paramètres d'URL (:id) et le body (req.body)",
+      "La connexion à MongoDB Atlas via Mongoose",
+      "Le modèle de données (Schema)",
+      "Les variables d'environnement avec .env",
+      "Tester une API avec Thunder Client",
+      "--"
+    ],
+    "techs": [
+      "Node.js"
+    ],
+    "schema": "exo1-decouverte/\n├── server.js    → point d'entrée — serveur Express + routes CRUD\n├── .env         → variables sensibles (non versionné)\n└── README.md    → ce fichier",
+    "screenshots": [],
+    "videoUrl": null,
+    "demoUrl": null,
+    "repoLinks": [],
+    "githubUrl": "https://github.com/Loulia-06/dev-learning-portfolio/tree/main/backend/api-rest/exo1-decouverte",
+    "highlight": false
+  },
+  {
+    "id": "exo2-bibliotheque",
+    "title": "Exo 2",
+    "category": "backend",
+    "path": "backend/api-rest/exo2-bibliotheque",
+    "lang": "Node.js",
+    "level": "moyen",
+    "date": "2026-05",
+    "description": "Créer de A à Z une API REST de gestion de livres en autonomie, en appliquant\nles notions vues pendant l'exercice 1 sur l'API Notes.\n\n---",
+    "whatILearned": "",
+    "notions": [
+      "Structure complète d'un server.js en 6 étapes",
+      "Verbes HTTP : GET, POST, PUT, DELETE",
+      "Paramètres d'URL (:id) et req.params",
+      "Body (req.body) et quand l'utiliser",
+      "Modèle Mongoose avec validation (required)",
+      "Différence entre `livres` (pluriel) et `livre` (singulier)",
+      "Utilisation de $set pour modifier uniquement les champs envoyés",
+      "Codes de statut HTTP : 200, 201, 404",
+      "Test complet avec Thunder Client",
+      "--"
+    ],
+    "techs": [
+      "Node.js"
+    ],
+    "schema": "exo2-bibliotheque/\n├── server.js    → serveur Express + modèle + routes CRUD\n├── .env         → variables sensibles (non versionné)\n├── package.json → dépendances du projet\n└── README.md    → ce fichier",
+    "screenshots": [],
+    "videoUrl": null,
+    "demoUrl": null,
+    "repoLinks": [],
+    "githubUrl": "https://github.com/Loulia-06/dev-learning-portfolio/tree/main/backend/api-rest/exo2-bibliotheque",
+    "highlight": false
+  },
+  {
+    "id": "recette-du-monde",
+    "title": "\udf7d️ RecetteDuMonde",
+    "category": "projets",
+    "path": "projets-complets/recette-du-monde",
+    "lang": "Divers",
+    "level": "moyen",
+    "date": "2026-05",
+    "description": "Concevoir une API REST complète pour gérer des recettes internationales,\nla connecter à une base de données MongoDB, et la relier à une interface\nutilisateur. Le tout sécurisé avec une authentification JWT.\n\n---",
+    "whatILearned": "",
+    "notions": [
+      "Architecture Client / Serveur / Base de données",
+      "API REST — routes, verbes HTTP, codes de statut",
+      "CRUD complet (GET, POST, PUT, DELETE)",
+      "Recherche et filtrage avec query params et $regex MongoDB",
+      "Authentification JWT (JSON Web Token)",
+      "Hashage de mot de passe avec bcryptjs",
+      "Middleware de vérification de token",
+      "Next.js App Router — routes API et pages front",
+      "TypeScript",
+      "React — useState, useEffect, fetch()",
+      "Tailwind CSS",
+      "--"
+    ],
+    "techs": [
+      "Divers"
+    ],
+    "schema": null,
+    "screenshots": [],
+    "videoUrl": null,
+    "demoUrl": null,
+    "repoLinks": [
+      {
+        "label": "projet_yboost",
+        "url": "https://github.com/Loulia-06/Projet_YBOOST"
+      }
+    ],
+    "githubUrl": "https://github.com/Loulia-06/dev-learning-portfolio/tree/main/projets-complets/recette-du-monde",
+    "highlight": false
+  }
+]

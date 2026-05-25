@@ -4,10 +4,10 @@ import './Projects.css'
 
 const CATEGORY_LABELS = {
   backend:       'Backend',
-  programmation: 'Programmation',
   frontend:      'Frontend',
-  algo:          'Algorithmique',
+  programmation: 'Programmation',
   bdd:           'Base de données',
+  projets:       'Projets complets',
 }
 
 function LevelBadge({ level }) {
