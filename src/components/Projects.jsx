@@ -15,8 +15,19 @@ function LevelBadge({ level }) {
   return <span className={cls}>{level}</span>
 }
 
+function Lightbox({ url, onClose }) {
+  if (!url) return null
+  return (
+    <div className="lightbox" onClick={onClose}>
+      <button className="lightbox__close" onClick={onClose}>✕</button>
+      <img src={url} alt="Capture agrandie" onClick={e => e.stopPropagation()} />
+    </div>
+  )
+}
+
 function ProjectModal({ project, onClose }) {
   if (!project) return null
+  const [lightboxUrl, setLightboxUrl] = useState(null)
 
   const youtubeEmbed = project.videoUrl
     ? project.videoUrl
@@ -79,11 +90,20 @@ function ProjectModal({ project, onClose }) {
             <h3>🖼️ Captures d'écran</h3>
             <div className="modal__screenshots">
               {project.screenshots.map((url, i) => (
-                <img key={i} src={url} alt={`Capture ${i+1}`} loading="lazy" />
+                <img
+                  key={i}
+                  src={url}
+                  alt={`Capture ${i+1}`}
+                  loading="lazy"
+                  className="modal__screenshot-thumb"
+                  onClick={() => setLightboxUrl(url)}
+                />
               ))}
             </div>
           </div>
         )}
+
+        <Lightbox url={lightboxUrl} onClose={() => setLightboxUrl(null)} />
 
         {youtubeEmbed && (
           <div className="modal__section">
@@ -138,7 +158,7 @@ export default function Projects() {
       <section id="projects" className="projects">
         <div className="container">
           <span className="section-label">Projets</span>
-          <h2 className="section-title">Mes exercices & projets</h2>
+          <h2 className="section-title">Mes exercices et projets</h2>
           <div className="projects__empty">
             <p>
               Les projets se chargent depuis <strong>dev-learning-portfolio</strong> sur GitHub.
@@ -154,7 +174,7 @@ export default function Projects() {
     <section id="projects" className="projects">
       <div className="container">
         <span className="section-label">Projets</span>
-        <h2 className="section-title">Mes exercices & projets</h2>
+        <h2 className="section-title">Mes exercices et projets</h2>
         <p className="section-intro">
           {projects.length} exercice{projects.length > 1 ? 's' : ''} — récupérés automatiquement
           depuis GitHub à chaque déploiement.
