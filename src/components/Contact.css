@@ -1,0 +1,102 @@
+.contact {
+  background: var(--bg-alt);
+  padding-bottom: 0;
+}
+
+.contact__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+  padding-bottom: 5rem;
+}
+
+.contact__text .section-label { color: var(--ink-3); }
+.contact__text .section-title { color: var(--ink); }
+.contact__text .section-title em { color: var(--accent); }
+
+.contact__text p {
+  color: var(--ink-2);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+.contact__text strong { color: var(--ink); }
+
+/* Liens */
+.contact__links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact__link {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  padding: 1.1rem 1.25rem;
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+  box-shadow: var(--shadow-sm);
+}
+.contact__link:hover {
+  background: var(--accent-light);
+  border-color: var(--accent);
+  transform: translateX(4px);
+  text-decoration: none;
+}
+
+.contact__link-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  color: var(--ink-2);
+}
+.contact__link-icon svg { width: 20px; height: 20px; }
+
+.contact__link-label {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 0.98rem;
+}
+
+.contact__link-sub {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--ink-3);
+  margin-top: 0.1rem;
+}
+
+.contact__link-arrow {
+  margin-left: auto;
+  color: var(--ink-3);
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+.contact__link:hover .contact__link-arrow { color: var(--accent); }
+
+/* Footer */
+.contact__footer {
+  border-top: 1px solid var(--border);
+  padding: 1.75rem 0;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink-3);
+  line-height: 1.8;
+}
+.contact__footer a { color: var(--ink-2); }
+.contact__footer a:hover { color: var(--accent); text-decoration: none; }
+
+@media (max-width: 900px) {
+  .contact__inner { grid-template-columns: 1fr; gap: 3rem; }
+}
