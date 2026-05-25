@@ -44,7 +44,7 @@ export default function Contact() {
           </a>
 
           <a
-            href="mailto:nyfitiasolohery@gmail.com"
+            href="mailto:loulia.tsui@outlook.com"
             className="contact__link"
           >
             <span className="contact__link-icon">✉️</span>
@@ -56,7 +56,7 @@ export default function Contact() {
           </a>
 
           <a
-            href="https://www.linkedin.com/in/"
+            href="https://www.linkedin.com/in/louliatsui/"
             target="_blank"
             rel="noreferrer"
             className="contact__link"

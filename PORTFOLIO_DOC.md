@@ -1,11 +1,12 @@
-# 📖 Documentation Portfolio — Loulia
+# Documentation Portfolio — Loulia
 
-> Référence complète pour modifier, personnaliser et maintenir le portfolio.
+> Référence complète pour modifier, maintenir et reprendre le portfolio.
 > Garde ce fichier ouvert dans VS Code quand tu travailles sur le site.
+> Dernière mise à jour : mai 2026
 
 ---
 
-## 🗂️ Structure des fichiers
+## Structure des fichiers
 
 ```
 mon-portfolio/
@@ -13,303 +14,340 @@ mon-portfolio/
 ├── index.html                        ← Point d'entrée HTML (titre, polices Google)
 ├── vite.config.js                    ← Config Vite (ne pas toucher)
 ├── package.json                      ← Scripts npm
+├── .env                              ← Token GitHub (NE PAS committer)
+├── .gitignore                        ← Ignore node_modules, dist, .env
 │
 ├── public/
-│   └── favicon.svg                   ← Icône onglet navigateur (L rouge)
+│   ├── favicon.svg                   ← Icône onglet navigateur
+│   └── cv.pdf                        ← À placer ici pour le bouton "Télécharger mon CV"
 │
 ├── scripts/
-│   └── fetch-github-data.js          ← ⭐ Fetch automatique GitHub → projects.json
+│   └── fetch-github-data.js          ← Fetch automatique GitHub → projects.json
 │
 └── src/
     ├── main.jsx                      ← Point d'entrée React (ne pas toucher)
     ├── App.jsx                       ← Assemble tous les composants
-    ├── index.css                     ← ⭐ Tokens de design (couleurs, polices, etc.)
+    ├── index.css                     ← Tokens de design (couleurs, polices, etc.)
     │
     ├── data/
-    │   ├── github-config.js          ← ✏️ Dossiers GitHub à scanner
-    │   ├── skills.js                 ← ✏️ Compétences et niveaux (éditer manuellement)
-    │   └── projects.json             ← ⚙️ Généré automatiquement — NE PAS éditer
+    │   ├── github-config.js          ← Dossiers GitHub à scanner
+    │   ├── skills.js                 ← Compétences (éditer manuellement)
+    │   └── projects.json             ← Généré automatiquement — NE PAS éditer
     │
     └── components/
         ├── Navbar.jsx / .css         ← Barre de navigation fixe
-        ├── Hero.jsx / .css           ← Section d'accueil (nom, tagline, carte)
-        ├── About.jsx / .css          ← Présentation personnelle
-        ├── Skills.jsx / .css         ← Grille de compétences
-        ├── Projects.jsx / .css       ← Grille projets + filtres + modal détail
-        ├── Journey.jsx / .css        ← Timeline du parcours
+        ├── Hero.jsx / .css           ← Section d'accueil + carte alternance
+        ├── About.jsx / .css          ← Présentation personnelle ("Mon parcours")
+        ├── Skills.jsx / .css         ← Grille de compétences avec icônes SVG
+        ├── Projects.jsx / .css       ← Grille projets + filtres + modal + lightbox
         └── Contact.jsx / .css        ← Liens GitHub / email / LinkedIn + footer
 ```
 
+Note : la section Journey a été supprimée. App.jsx suit cet ordre : Navbar → Hero → About → Skills → Projects → Contact.
+
 ---
 
-## 🎨 Modifier le design
+## Design — palette violette claire
 
-### Couleurs & polices — `src/index.css`
-
-**Tout le design passe par des variables CSS.**
-Modifie uniquement ce bloc en haut du fichier :
+Tout le design passe par des variables CSS dans `src/index.css`.
 
 ```css
 :root {
-  --bg:           #F9F5EE;   /* fond général (beige chaud) */
-  --bg-card:      #FFFFFF;   /* fond des cartes */
-  --bg-tinted:    #F0E8D8;   /* fond sections alternées */
-  --ink:          #1A1208;   /* texte principal */
-  --ink-2:        #6B5840;   /* texte secondaire */
-  --ink-3:        #A89078;   /* texte discret (labels, dates) */
-  --accent:       #C84B0A;   /* couleur principale (orange-rouge) */
-  --accent-hover: #A83D08;   /* accent au survol */
-  --accent-light: #FAE8DE;   /* fond léger accent */
-  --green:        #3D6B56;   /* couleur "appris" */
-  --border:       #E2D8CA;   /* bordures */
+  /* Couleurs principales */
+  --accent:        #8055A2;   /* violet principal */
+  --accent-hover:  #6A4389;   /* violet foncé au survol */
+  --accent-light:  #E8D5F5;   /* fond violet très clair */
 
-  --font-display: 'Fraunces', Georgia, serif;   /* titres */
-  --font-body:    'Lora', Georgia, serif;        /* texte courant */
-  --font-mono:    'JetBrains Mono', monospace;   /* code, labels */
+  /* Fonds (tout clair, pas de dark mode) */
+  --bg:            #F5F0FA;   /* fond général */
+  --bg-alt:        #EDE5F7;   /* fond sections alternées */
+  --bg-card:       #FFFFFF;   /* fond des cartes */
+
+  /* Textes */
+  --ink:           #2D1B4E;   /* texte principal */
+  --ink-2:         #6B5880;   /* texte secondaire */
+  --ink-3:         #9B7BB8;   /* texte discret (labels, dates) */
+
+  /* Bordures & ombres */
+  --border:        #E2D5F0;
+  --shadow-sm:     0 1px 4px rgba(128,85,162,0.10);
+  --shadow-md:     0 4px 16px rgba(128,85,162,0.18);
+
+  /* Polices — NE PAS CHANGER (chargées dans index.html) */
+  --font-display:  'Fraunces', Georgia, serif;   /* titres */
+  --font-body:     'Lora', Georgia, serif;        /* corps */
+  --font-mono:     'JetBrains Mono', monospace;   /* labels, code */
+
+  --radius:        8px;
+  --radius-lg:     16px;
+  --max-w:         1160px;
 }
 ```
 
-**Exemples de changements rapides :**
-
-| Envie | Variable à changer |
-|-------|-------------------|
-| Fond plus blanc | `--bg: #FFFFFF` |
-| Accent bleu | `--accent: #1D6FD8` |
-| Fond sombre (dark mode) | `--bg: #0F0F0F`, `--ink: #F0F0F0` |
-| Autre police titre | `--font-display: 'Playfair Display', serif` |
-
-> 💡 Pour changer les polices, édite aussi `index.html` → lien Google Fonts.
+Il n'y a plus de `--bg-tinted`, `--green`, `--green-light` — ces anciens tokens sont supprimés.
 
 ---
 
-### Polices disponibles (déjà chargées)
+## Modifier le contenu
 
-| Nom | Usage | Variable |
-|-----|-------|----------|
-| **Fraunces** | Titres, nom hero | `--font-display` |
-| **Lora** | Corps de texte | `--font-body` |
-| **JetBrains Mono** | Labels, code, dates | `--font-mono` |
+### Hero — `src/components/Hero.jsx`
 
-Pour en changer, remplace dans `index.html` :
-```html
-<link href="https://fonts.googleapis.com/css2?family=TaPolice:wght@400;700&display=swap" rel="stylesheet" />
-```
-Et dans `index.css` :
-```css
---font-display: 'TaPolice', serif;
-```
+Structure actuelle :
+- Prénom "Loulia" en grand (font-display)
+- Sous-titre : "Étudiante en 2ᵉ année en informatique"
+- Tagline : *Je construis, je rate, je recommence.*
+- Description courte
+- Carte alternance blanche avec bordure violette :
+  - "Disponible dès / Septembre 2026 / Recherche alternance"
+  - Détails : "2 sem. entreprise / 1 sem. école" + "Contrat 1 an ou 3 ans"
+  - Bouton "Télécharger mon CV" (lien `/cv.pdf`)
 
----
-
-## ✏️ Modifier le contenu
-
-### Section Hero — `src/components/Hero.jsx`
-
-```jsx
-// Ligne 13 — Ton prénom affiché en grand
-<h1 className="hero__name">Loulia</h1>
-
-// Ligne 16 — Tagline sous le prénom
-<p className="hero__tagline">
-  Étudiante en 2ᵉ année d'informatique —<br />
-  <em>exploratrice de code, amoureuse des défis.</em>
-</p>
-
-// Ligne 21 — Phrase de description
-<p className="hero__desc">
-  J'apprends à construire des choses...
-</p>
-
-// Lignes 32-34 — Carte "En ce moment j'apprends"
-<li>Node.js + Express</li>
-<li>React</li>
-<li>SQL</li>
-
-// Ligne 38 — Depuis quand
-<span className="hero__card-since">Depuis octobre 2024</span>
-<span className="hero__card-months">~7 mois de pratique</span>
-```
+Pour changer la date ou le rythme, édite directement les textes dans `Hero.jsx`.
 
 ---
 
-### Section À propos — `src/components/About.jsx`
+### À propos — `src/components/About.jsx`
 
-```jsx
-// Lignes 10-11 — Titre
-<h2 className="section-title">Une reconversion<br /><em>par curiosité</em></h2>
+Titre : "Mon parcours" (avec `<br /><em>parcours</em>`)
 
-// Lignes 13-25 — 3 paragraphes de présentation
-<p>Avant l'informatique...</p>
-<p>Aujourd'hui en 2ᵉ année...</p>
-<p>Ce qui me motive...</p>
-
-// Lignes 28-46 — 4 cartes (icône, titre, description)
-{ icon: '🎓', title: 'Formation', desc: '...' }
-{ icon: '⏱️', title: 'Pratique',  desc: '...' }
-{ icon: '🌱', title: 'Philosophie', desc: '...' }
-{ icon: '🎯', title: 'Objectif',  desc: '...' }
-```
+Contenu : 3 paragraphes (économie → UX/design → code) + 1 carte "Formation" sans emoji.
 
 ---
 
-### Section Compétences — `src/data/skills.js`
+### Compétences — `src/data/skills.js`
 
-**Seul fichier de données à éditer manuellement.**
+Format de chaque compétence (pas de champ `level`) :
 
 ```js
-{ name: 'Python', level: 'débutant', icon: '🐍', since: '2024-10', category: 'language' }
+{ name: 'Python', icon: 'python', category: 'language' }
 ```
 
-| Champ | Valeurs possibles |
-|-------|------------------|
-| `level` | `'débutant'` · `'moyen'` · `'avancé'` |
-| `category` | `'language'` · `'backend'` · `'frontend'` · `'bdd'` · `'outils'` |
-| `since` | Format `'AAAA-MM'` |
+Catégories disponibles : `language` · `frontend` · `backend` · `bdd` · `infra` · `outils` · `design` · `cms` · `gestion`
 
-**Faire progresser un niveau :**
+Les icônes sont des SVG chargés depuis le CDN devicons :
+```
+https://cdn.jsdelivr.net/gh/devicons/devicon/icons/{icon}/{icon}-original.svg
+```
+
+Cas spécial — Notion utilise svgl.app (pas dans devicons) :
 ```js
-// Avant
-{ name: 'Python', level: 'débutant', ... }
-// Après
-{ name: 'Python', level: 'moyen', ... }
+{ name: 'Notion', icon: 'notion', category: 'gestion' }
+// → https://svgl.app/library/notion.svg
 ```
-Puis `git push` → Vercel redéploie.
+
+Si une icône ne se charge pas, elle est simplement masquée (`onError` sur l'`<img>`).
+
+Liste complète des icônes utilisées :
+`python`, `javascript`, `typescript`, `java`, `csharp`, `go`, `php`,
+`html5`, `react`, `nextjs`, `tailwindcss`,
+`nodejs`, `fastapi`,
+`mysql`, `postgresql`, `mongodb`,
+`linux`, `windows8`, `apache`, `cisco`,
+`git`, `vscode`,
+`figma`, `canva`, `illustrator`,
+`wordpress`, `google` (×2),
+`notion`, `jira` (×2)
 
 ---
 
-### Section Parcours — `src/components/Journey.jsx`
+### Projets — `src/components/Projects.jsx`
 
-```js
-const MILESTONES = [
-  {
-    date:  'Sept. 2024',          // ← date affichée
-    title: 'Le démarrage',        // ← titre de l'étape
-    desc:  'Première rentrée...', // ← description
-    icon:  '🌱',                  // ← emoji
-  },
-  // ... ajoute une étape en dupliquant un objet
-  {
-    date:    'Aujourd\'hui',
-    title:   'En cours…',
-    current: true,                // ← met le point en rouge/accent
-  }
-]
-```
+Fonctionnalités actuelles :
+- Filtres par catégorie (Tous, Backend, Frontend, Programmation, Base de données, Projets complets)
+- Cartes avec icônes SVG inline (code, calendar, image, video, map)
+- Clic sur une carte → modal de détail
+- Flèches gauche/droite sur les côtés du modal pour naviguer entre projets (touches ← → aussi)
+- Screenshots cliquables → Lightbox avec navigation (← →) et compteur "1 / 4"
+- Fermeture avec Echap ou clic sur le fond
+
+Les données viennent de `src/data/projects.json` (généré automatiquement).
 
 ---
 
-### Section Contact — `src/components/Contact.jsx`
+### Contact — `src/components/Contact.jsx`
 
-```jsx
-// Ligne 13 — Titre
-<h2>Discutons<br /><em>ensemble</em></h2>
-
-// Ligne 17-21 — Texte
-<p>Tu es recruteur·se...</p>
-
-// Ligne 27 — Lien GitHub (déjà bon)
-href="https://github.com/Loulia-06"
-
-// Ligne 36 — ✏️ TON EMAIL
-href="mailto:loulia@example.com"   ← remplace ici
-
-// Ligne 46 — ✏️ TON LINKEDIN
-href="https://www.linkedin.com/in/"  ← ajoute ton profil
-```
+Infos actuelles :
+- GitHub : https://github.com/Loulia-06
+- Email : loulia.tsui@outlook.com
+- LinkedIn : https://www.linkedin.com/in/louliatsui/
+- Bouton "Télécharger mon CV" → `/cv.pdf`
+- Texte alternance : septembre 2026, 2 sem/1 sem, 1 an ou 3 ans
 
 ---
 
-## ⚙️ Configurer les dossiers GitHub — `src/data/github-config.js`
+## Configurer les dossiers GitHub — `src/data/github-config.js`
 
 ```js
 export const GITHUB_CONFIG = {
-  username: 'Loulia-06',             // ← ton username GitHub
-  repo:     'dev-learning-portfolio', // ← ton repo d'exercices
+  username: 'Loulia-06',
+  repo:     'dev-learning-portfolio',
   branch:   'main',
 
   domains: [
-    // Ajoute un objet par dossier dans dev-learning-portfolio
-    { path: 'backend/api-rest', category: 'backend', lang: 'Node.js' },
-    { path: 'programmation/python', category: 'programmation', lang: 'Python' },
-    // etc.
-  ]
+    { path: 'backend/api-rest',        category: 'backend',       lang: 'Node.js'    },
+    { path: 'backend/nodejs',          category: 'backend',       lang: 'Node.js'    },
+    { path: 'backend/php',             category: 'backend',       lang: 'PHP'        },
+    { path: 'frontend/html-css',       category: 'frontend',      lang: 'HTML/CSS'   },
+    { path: 'frontend/javascript',     category: 'frontend',      lang: 'JavaScript' },
+    { path: 'frontend/tailwind',       category: 'frontend',      lang: 'Tailwind'   },
+    { path: 'programmation/python',    category: 'programmation', lang: 'Python'     },
+    { path: 'programmation/java',      category: 'programmation', lang: 'Java'       },
+    { path: 'programmation/csharp',    category: 'programmation', lang: 'C#'         },
+    { path: 'programmation/go',        category: 'programmation', lang: 'Go'         },
+    { path: 'base-de-donnees/sql',     category: 'bdd',           lang: 'SQL'        },
+    { path: 'projets-complets',        category: 'projets',       lang: 'Divers'     },
+  ],
 }
 ```
 
-**Si un dossier n'existe pas encore dans ton repo → pas d'erreur, juste ignoré.**
+Si un dossier n'existe pas encore dans le repo → pas d'erreur, juste ignoré.
+
+Pour ajouter un nouveau dossier, ajoute une ligne ici puis `npm run fetch` pour tester.
 
 ---
 
-## 🚀 Commandes utiles
+## Token GitHub — éviter la limite de taux
+
+Sans token, l'API GitHub autorise seulement 60 requêtes/heure. Avec un build qui lit
+plusieurs dossiers, ça s'épuise vite.
+
+### Fichier `.env` (à la racine de `mon-portfolio/`)
+
+```
+GITHUB_TOKEN=ghp_xxxxx_TON_TOKEN
+```
+
+Ce fichier est dans `.gitignore` — il ne sera jamais commité.
+
+### Comment ça marche
+
+`package.json` utilise `node --env-file=.env` (fonctionnalité native Node 24, pas besoin de dotenv) :
+
+```json
+"build": "node --env-file=.env scripts/fetch-github-data.js && vite build",
+"fetch": "node --env-file=.env scripts/fetch-github-data.js"
+```
+
+### Sur Vercel (production)
+
+Ajouter le token dans les variables d'environnement Vercel :
+- Dashboard Vercel → ton projet → Settings → Environment Variables
+- Clé : `GITHUB_TOKEN`, Valeur : ton token
+
+### Créer un nouveau token (si l'ancien expire)
+
+1. GitHub → Settings → Developer Settings → Personal Access Tokens → Tokens (classic)
+2. Permissions requises : `public_repo` suffit
+3. Colle la valeur dans `.env` et dans Vercel
+
+---
+
+## Ajouter des captures d'écran à un projet
+
+Les screenshots sont hébergés dans `dev-learning-portfolio` sur GitHub.
+
+Structure attendue dans le repo dev :
+```
+projets-complets/
+└── recette-du-monde/
+    ├── README.md
+    └── screenshots/
+        ├── accueil.png
+        ├── connexion.png
+        ├── creation-recette.png
+        └── details-recette.png
+```
+
+Dans le `README.md` du projet :
+```markdown
+## Captures d'écran
+![Description](screenshots/nom-du-fichier.png)
+```
+
+Le script `fetch-github-data.js` lit ces liens relatifs et les convertit en URLs GitHub brutes
+(`raw.githubusercontent.com/...`). Les photos s'affichent dans le modal et sont cliquables
+pour s'agrandir en lightbox.
+
+Nommage conseillé : tout en minuscules, tirets à la place des espaces (`page-accueil.png`).
+
+---
+
+## Commandes utiles
 
 ```bash
 # Installer les dépendances (une seule fois)
+cd mon-portfolio
 npm install
 
 # Récupérer les projets GitHub + build complet
 npm run build
 
-# Voir le résultat en local
+# Voir le résultat du build en local
 npm run preview
 # → http://localhost:4173
 
 # Dev avec rechargement automatique (sans refetch GitHub)
-npm run fetch   # génère projects.json une fois
-npm run dev     # → http://localhost:5173
+npm run fetch      # génère projects.json une fois
+npm run dev        # → http://localhost:5173
 
-# Pousser sur GitHub → déclenche Vercel
-git add .
+# Pousser sur GitHub → Vercel redéploie automatiquement
+git add -p         # ou git add <fichier>
 git commit -m "portfolio: description du changement"
 git push
 ```
 
 ---
 
-## 🔄 Workflow quotidien
+## Workflow quotidien
 
 ### Après un exercice dans `dev-learning-portfolio`
 ```
 1. git push sur dev-learning-portfolio
-2. Vercel → Redeploy
-→ Le projet apparaît automatiquement ✅
+2. Sur Vercel → Redeploy (ou attendre le prochain push sur mon-portfolio)
+→ Le projet apparaît automatiquement
 ```
 
 ### Pour modifier le design
 ```
 1. Édite le fichier dans VS Code
-2. npm run dev (pour voir en direct)
+2. npm run dev pour voir en direct
 3. git push quand c'est bon → Vercel redéploie
 ```
 
 ### Pour ajouter une compétence
 ```
 1. Ouvre src/data/skills.js
-2. Ajoute une ligne ou change le level
+2. Ajoute une ligne { name, icon, category }
 3. git push → Vercel redéploie
+```
+
+### Pour ajouter un nouveau dossier de projets
+```
+1. Crée le dossier dans dev-learning-portfolio
+2. Ajoute le path dans src/data/github-config.js
+3. npm run fetch pour vérifier
+4. git push sur mon-portfolio
 ```
 
 ---
 
-## 🐛 Problèmes fréquents
+## Problèmes fréquents
 
 | Erreur | Cause | Solution |
 |--------|-------|----------|
-| `0 projets affichés` | Dossiers GitHub pas trouvés | Vérifie les `path` dans `github-config.js` |
-| `npm run build` plante | Erreur fetch GitHub | Normal si repo vide — continue |
+| `0 projets affichés` | Paths github-config erronés | Vérifie les `path` dans `github-config.js` vs la vraie structure du repo |
+| `0 projets` après build | Rate limit GitHub (60 req/h) | Ajoute GITHUB_TOKEN dans `.env` |
+| Token non chargé | `node` sans `--env-file` | Vérifie que `package.json` a `node --env-file=.env` |
+| `npm run build` plante | Erreur fetch GitHub | Ouvre DevTools (`F12`) → Console pour voir l'erreur |
 | Page blanche | Erreur JS | Ouvre DevTools (`F12`) → onglet Console |
-| Polices pas chargées | Pas de connexion internet | Normal en offline — OK sur Vercel |
-| `cd: no such file` | Mauvais dossier | `pwd` pour voir où tu es |
+| Photos pas visibles | Screenshots pas commités | `git add screenshots/ && git push` dans dev-learning-portfolio |
+| CV pas téléchargeable | `cv.pdf` manquant | Place le fichier dans `mon-portfolio/public/cv.pdf` |
+| Vercel build sans token | Variable env manquante | Ajouter GITHUB_TOKEN dans Vercel → Settings → Env Variables |
 
 ---
 
-## 🎨 Idées de personnalisation
+## À faire (todo)
 
-- **Changer la couleur accent** → `--accent` dans `index.css`
-- **Dark mode** → inverser `--bg` et `--ink`
-- **Ajouter une photo** → dans `Hero.jsx`, remplace la carte par une `<img>`
-- **Ajouter une section** → crée `MonSection.jsx` + `.css`, importe dans `App.jsx`
-- **Changer la police titre** → remplace `Fraunces` dans `index.html` + `index.css`
-
----
-
-*Dernière mise à jour : mai 2026*
+- Ajouter `cv.pdf` dans `public/`
+- Ajouter `GITHUB_TOKEN` dans les variables d'environnement Vercel
+- Vérifier que les screenshots de `recette-du-monde` s'affichent bien après le dernier push
