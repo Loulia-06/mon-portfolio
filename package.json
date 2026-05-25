@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/fetch-github-data.js && vite build",
+    "build": "node --env-file=.env scripts/fetch-github-data.js && vite build",
     "preview": "vite preview",
-    "fetch": "node scripts/fetch-github-data.js"
+    "fetch": "node --env-file=.env scripts/fetch-github-data.js"
   },
   "dependencies": {
     "react": "^18.3.1",
