@@ -160,9 +160,12 @@ section { padding: 5rem 0; }
 }
 
 .badge-notion {
-  background: var(--bg-tinted);
+  background: var(--bg-alt);
   color: var(--ink-2);
   border: 1px solid var(--border);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
 }
 
 
