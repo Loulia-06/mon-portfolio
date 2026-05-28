@@ -196,7 +196,14 @@ function ProjectModal({ project, onClose, onPrev, onNext }) {
         )}
 
         <div className="modal__footer">
-          <a href={project.githubUrl} target="_blank" rel="noreferrer" className="btn btn-primary">
+          <a
+            href={project.category === 'projets' && project.repoLinks?.[0]?.url
+              ? project.repoLinks[0].url
+              : project.githubUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn-primary"
+          >
             Voir sur GitHub →
           </a>
           {project.demoUrl && (
@@ -204,11 +211,6 @@ function ProjectModal({ project, onClose, onPrev, onNext }) {
               <Icon name="video" size={15} /> Démo live
             </a>
           )}
-          {project.repoLinks?.map(l => (
-            <a key={l.url} href={l.url} target="_blank" rel="noreferrer" className="btn btn-ghost">
-              {l.label}
-            </a>
-          ))}
         </div>
       </div>
 
