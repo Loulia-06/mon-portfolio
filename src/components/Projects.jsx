@@ -97,6 +97,8 @@ function ProjectModal({ project, onClose, onPrev, onNext }) {
 
   if (!project) return null
 
+  const imageScreenshots = project.screenshots?.filter(url => !url.toLowerCase().endsWith('.pdf')) ?? []
+
   const youtubeEmbed = project.videoUrl
     ? project.videoUrl
         .replace('youtube.com/watch?v=', 'youtube.com/embed/')
@@ -167,16 +169,26 @@ function ProjectModal({ project, onClose, onPrev, onNext }) {
           <div className="modal__section">
             <h3><Icon name="image" size={16} /> Captures d'écran</h3>
             <div className="modal__screenshots">
-              {project.screenshots.map((url, i) => (
-                <img
-                  key={i}
-                  src={url}
-                  alt={`Capture ${i + 1}`}
-                  loading="lazy"
-                  className="modal__screenshot-thumb"
-                  onClick={() => setLightboxIdx(i)}
-                />
-              ))}
+              {project.screenshots.map((url, i) => {
+                if (url.toLowerCase().endsWith('.pdf')) {
+                  return (
+                    <a key={i} href={url} target="_blank" rel="noreferrer" className="modal__doc-link">
+                      <Icon name="book" size={18} /> Voir le document PDF
+                    </a>
+                  )
+                }
+                const imgIdx = imageScreenshots.indexOf(url)
+                return (
+                  <img
+                    key={i}
+                    src={url}
+                    alt={`Capture ${i + 1}`}
+                    loading="lazy"
+                    className="modal__screenshot-thumb"
+                    onClick={() => setLightboxIdx(imgIdx)}
+                  />
+                )
+              })}
             </div>
           </div>
         )}
@@ -221,7 +233,7 @@ function ProjectModal({ project, onClose, onPrev, onNext }) {
       )}
 
       <Lightbox
-        screenshots={project.screenshots}
+        screenshots={imageScreenshots}
         index={lightboxIdx}
         onClose={() => setLightboxIdx(null)}
         onSetIndex={setLightboxIdx}

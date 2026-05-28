@@ -88,7 +88,9 @@
       "Divers"
     ],
     "schema": "projet-sql-ciara-mobility/\n├── create_tables.sql     → structure de la base + données test\n├── queries.sql           → 10+ requêtes documentées\n├── data/                 → fichiers CSV pour l'import\n│   ├── station.csv\n│   ├── type_vehicule.csv\n│   ├── client.csv\n│   ├── technicien.csv\n│   ├── vehicule.csv\n│   ├── borne_recharge.csv\n│   ├── reservation.csv\n│   ├── location.csv\n│   ├── paiement.csv\n│   └── maintenance.csv\n└── README.md",
-    "screenshots": [],
+    "screenshots": [
+      "https://raw.githubusercontent.com/Loulia-06/dev-learning-portfolio/main/projets-complets/Projet%20SQL/screenshots/mcd.pdf"
+    ],
     "videoUrl": null,
     "demoUrl": null,
     "repoLinks": [

@@ -86,8 +86,10 @@ function extractScreenshots(content, exercisePath) {
   const imgRegex = /!\[.*?\]\((screenshots\/[^)]+)\)/g
   let m
   while ((m = imgRegex.exec(section)) !== null) {
+    const encodedFile = m[1].split('/').map(encodeURIComponent).join('/')
+    const encodedPath = exercisePath.split('/').map(encodeURIComponent).join('/')
     urls.push(
-      `https://raw.githubusercontent.com/${username}/${repo}/${branch}/${exercisePath}/${m[1]}`
+      `https://raw.githubusercontent.com/${username}/${repo}/${branch}/${encodedPath}/${encodedFile}`
     )
   }
   return urls
