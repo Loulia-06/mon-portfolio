@@ -74,7 +74,7 @@
     "level": "débutant",
     "date": "2026-05",
     "description": "Concevoir et implémenter une base de données PostgreSQL complète pour cIAra Mobility, une start-up de location de véhicules électriques partagés (voitures, trottinettes, scooters, vélos).\n\nLa base de données gère : la flotte de véhicules, les stations et bornes de recharge, les clients, les réservations, les paiements et la maintenance.\n\n---",
-    "whatILearned": "Concevoir une base de données relationnelle de A à Z en partant d'un besoin métier réel. J'ai appris à modéliser avec Merise avant d'écrire une seule ligne de SQL, ce qui m'a aidée à structurer ma pensée. Les triggers et fonctions PostgreSQL m'ont montré qu'une base de données peut contenir de la logique métier, pas seulement des données.\n\n---",
+    "whatILearned": "Concevoir une base de données relationnelle de A à Z en partant d'un besoin métier réel. J'ai appris à modéliser avec Merise avant d'écrire une seule ligne de SQL, ce qui m'a aidée à structurer ma pensée. Les triggers et fonctions PostgreSQL m'ont montré qu'une base de données peut contenir de la logique métier, pas seulement des données.\n\nC'était mon premier projet SQL — et aussi mes premiers pas sur GitHub. La structure du repo et la documentation n'étaient pas encore mes points forts à l'époque. Aujourd'hui je sais ce que j'aurais fait différemment : des commits plus réguliers, un README dès le début, et une organisation des dossiers pensée dès le départ.\n\n---",
     "notions": [
       "Modélisation Merise (MCD et MLD)",
       "Création de tables avec contraintes (PRIMARY KEY, FOREIGN KEY, CHECK, NOT NULL)",
@@ -87,10 +87,8 @@
     "techs": [
       "Divers"
     ],
-    "schema": "projet-sql-ciara-mobility/\n├── create_tables.sql     → structure de la base + données test\n├── queries.sql           → 10+ requêtes documentées\n├── data/                 → fichiers CSV pour l'import\n│   ├── station.csv\n│   ├── type_vehicule.csv\n│   ├── client.csv\n│   ├── technicien.csv\n│   ├── vehicule.csv\n│   ├── borne_recharge.csv\n│   ├── reservation.csv\n│   ├── location.csv\n│   ├── paiement.csv\n│   └── maintenance.csv\n└── README.md",
-    "screenshots": [
-      "https://raw.githubusercontent.com/Loulia-06/dev-learning-portfolio/main/projets-complets/Projet%20SQL/screenshots/mcd.pdf"
-    ],
+    "schema": "projet-sql-ciara-mobility/\n├── documents/\n│   └── docs/\n│       ├── Dictionnaire_de_données.pdf     → dictionnaire complet des attributs\n│       ├── MLD.pdf                         → Modèle Logique de Données\n│       ├── liste(entités,attributs...).pdf  → liste des entités et attributs\n│       └── model conceptuel des données.pdf → MCD (Modèle Conceptuel)\n├── sql/\n│   ├── create_tables.sql                   → structure de la base + données test\n│   ├── queries.sql                         → 10+ requêtes documentées\n│   └── README.md",
+    "screenshots": [],
     "videoUrl": null,
     "demoUrl": null,
     "repoLinks": [
