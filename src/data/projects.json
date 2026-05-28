@@ -88,7 +88,9 @@
       "Divers"
     ],
     "schema": "projet-sql-ciara-mobility/\n├── documents/\n│   └── docs/\n│       ├── Dictionnaire_de_données.pdf     → dictionnaire complet des attributs\n│       ├── MLD.pdf                         → Modèle Logique de Données\n│       ├── liste(entités,attributs...).pdf  → liste des entités et attributs\n│       └── model conceptuel des données.pdf → MCD (Modèle Conceptuel)\n├── sql/\n│   ├── create_tables.sql                   → structure de la base + données test\n│   ├── queries.sql                         → 10+ requêtes documentées\n│   └── README.md",
-    "screenshots": [],
+    "screenshots": [
+      "https://raw.githubusercontent.com/Loulia-06/dev-learning-portfolio/main/projets-complets/Projet%20SQL/screenshots/mcd.pdf"
+    ],
     "videoUrl": null,
     "demoUrl": null,
     "repoLinks": [
