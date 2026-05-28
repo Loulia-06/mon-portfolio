@@ -163,7 +163,7 @@ async function processDomain(domain) {
     // Titre : H1 du README ou nom de dossier nettoyé
     const h1Match = content.match(/^#\s+(.+)/m)
     const title = h1Match
-      ? h1Match[1].replace(/^[🎯📝📚⚙️🔗]+\s*/, '').replace(/\s*—.*$/, '').trim()
+      ? h1Match[1].replace(/^[^\p{L}\p{N}\s]+\s*/u, '').replace(/\s*—.*$/, '').trim()
       : ex.name.replace(/-/g, ' ').replace(/^ex\d+\s*/i, '').trim()
 
     const parsed = parseReadme(content, exPath)
