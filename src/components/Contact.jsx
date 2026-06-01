@@ -13,12 +13,12 @@ export default function Contact() {
           <p>
             Je suis à la recherche d'une alternance à partir de <strong>septembre 2026</strong>,
             sur un rythme de <strong>2 semaines en entreprise / 1 semaine à l'école</strong>.
-            Contrat <strong>1 an ou 3 ans</strong>.
+             <strong> Contrat d'apprentissage d'une durée de 1 an ou 3 ans</strong>.
           </p>
           <p>
             Tu as une opportunité ou tu veux simplement échanger ? Écris-moi.
           </p>
-          <a href="/cv.pdf" download className="btn btn-primary" style={{ marginTop: '1rem' }}>
+          <a href="/cv.pdf" download="cv-loulia-tsui.pdf" className="btn btn-primary" style={{ marginTop: '1rem' }}>
             Télécharger mon CV
           </a>
         </div>

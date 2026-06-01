@@ -51,7 +51,7 @@ export default function Hero() {
               </div>
             </div>
             <p className="hero__alternance-cta-label">Travaillons ensemble</p>
-            <a href="/cv.pdf" download className="btn btn-primary hero__alternance-btn">
+            <a href="/cv.pdf" download="cv-loulia-tsui.pdf" className="btn btn-primary hero__alternance-btn">
               Télécharger mon CV
             </a>
           </div>
