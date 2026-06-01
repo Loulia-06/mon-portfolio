@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node --env-file=.env scripts/fetch-github-data.js && vite build",
+    "build": "node scripts/fetch-github-data.js && vite build",
     "preview": "vite preview",
-    "fetch": "node --env-file=.env scripts/fetch-github-data.js"
+    "fetch": "node scripts/fetch-github-data.js"
   },
   "dependencies": {
     "dotenv": "^17.4.2",

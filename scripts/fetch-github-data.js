@@ -4,6 +4,7 @@
 // Lit les README de dev-learning-portfolio et génère src/data/projects.json
 // ─────────────────────────────────────────────────────────────────────────────
 
+import 'dotenv/config'
 import { writeFileSync, mkdirSync } from 'fs'
 import { GITHUB_CONFIG } from '../src/data/github-config.js'
 
