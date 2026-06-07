@@ -11,7 +11,7 @@ export default function Contact() {
             Travaillons<br /><em>ensemble</em>
           </h2>
           <p>
-            Je suis à la recherche d'une alternance à partir de <strong>septembre 2026</strong>,
+            Je suis à la recherche d'une alternance à partir d'<strong>octobre 2026</strong>,
             sur un rythme de <strong>2 semaines en entreprise / 1 semaine à l'école</strong>.
              <strong> Contrat d'apprentissage d'une durée de 1 an ou 3 ans</strong>.
           </p>
