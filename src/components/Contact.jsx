@@ -15,7 +15,7 @@ export default function Contact() {
             et je recherche une <strong>alternance à partir d'octobre 2026</strong> sur un rythme de 2 semaines en entreprise / 1 semaine à l'école (1 an ou 3 ans).
           </p>
           <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginTop: '1rem' }}>
-            <a href="/cv_loulia_tsui_stage.pdf" download="cv-loulia-tsui-stage.pdf" className="btn btn-ghost">
+            <a href="/cv_loulia_tsui_stage.pdf" download="cv-loulia-tsui-stage.pdf" className="btn btn-primary">
               Mon CV — Stage
             </a>
             <a href="/cv.pdf" download="cv-loulia-tsui.pdf" className="btn btn-primary">
