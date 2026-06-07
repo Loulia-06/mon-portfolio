@@ -36,6 +36,18 @@ export default function Hero() {
         </div>
 
         <div className="hero__deco fade-up" style={{ animationDelay: '0.2s' }}>
+
+          <div className="hero__stage-card">
+            <p className="hero__alternance-label">Disponible pour un stage</p>
+            <h3 className="hero__stage-title">Mi-juin — Fin sept.</h3>
+            <div className="hero__alternance-details">
+              <div className="hero__alternance-item">
+                <span className="hero__alternance-value">~3 mois</span>
+                <span className="hero__alternance-key">Durée du stage</span>
+              </div>
+            </div>
+          </div>
+
           <div className="hero__alternance-card">
             <p className="hero__alternance-label">Disponible dès</p>
             <h3 className="hero__alternance-title">Octobre 2026</h3>
@@ -55,6 +67,7 @@ export default function Hero() {
               Télécharger mon CV
             </a>
           </div>
+
         </div>
       </div>
 
