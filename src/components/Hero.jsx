@@ -43,11 +43,10 @@ export default function Hero() {
             <p className="hero__alternance-sub">Stage informatique</p>
             <div className="hero__alternance-details">
               <div className="hero__alternance-item">
-                <span className="hero__alternance-value">~3 mois</span>
+                <span className="hero__alternance-value">~ 2 ou 3 mois</span>
                 <span className="hero__alternance-key">Durée du stage</span>
               </div>
             </div>
-            <p className="hero__alternance-cta-label">Travaillons ensemble</p>
             <a href="/cv.pdf" download="cv-loulia-tsui.pdf" className="btn btn-primary hero__alternance-btn">
               Mon CV — Stage
             </a>
