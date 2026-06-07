@@ -76,49 +76,45 @@
   flex-wrap: wrap;
 }
 
-/* Carte déco droite */
+/* Carte déco droite — deux cartes côte à côte */
 .hero__deco {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
   gap: 1rem;
-}
-
-/* Carte stage */
-.hero__stage-card {
-  background: var(--bg);
-  border: 2px dashed var(--border);
-  border-radius: var(--radius-lg);
-  padding: 1.25rem 2rem;
+  align-items: stretch;
   width: 100%;
-  max-width: 400px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
 }
 
-.hero__stage-title {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: var(--ink);
-  line-height: 1.1;
-  margin: 0;
-}
-
-/* Carte alternance grande */
-.hero__alternance-card {
+.hero__card {
+  flex: 1;
   background: #FFFFFF;
-  border: 2.5px solid #8055A2;
+  border: 1.5px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 2.5rem 2rem;
-  width: 100%;
-  max-width: 400px;
-  box-shadow: 0 8px 32px rgba(128,85,162,0.18);
+  padding: 1.5rem 1.25rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
+
+.hero__card--accent {
+  border: 2.5px solid #8055A2;
+  box-shadow: 0 8px 32px rgba(128,85,162,0.18);
+}
+
+.hero__card-title {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 900;
+  color: var(--ink);
+  line-height: 1;
+  margin: 0;
+}
+
+.hero__card--accent .hero__card-title {
+  color: #8055A2;
+}
+
+/* ancien .hero__alternance-card supprimé — remplacé par .hero__card */
 
 .hero__alternance-label {
   font-family: var(--font-mono);

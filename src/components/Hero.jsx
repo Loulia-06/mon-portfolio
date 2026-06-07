@@ -37,20 +37,24 @@ export default function Hero() {
 
         <div className="hero__deco fade-up" style={{ animationDelay: '0.2s' }}>
 
-          <div className="hero__stage-card">
-            <p className="hero__alternance-label">Disponible pour un stage</p>
-            <h3 className="hero__stage-title">Mi-juin — Fin sept.</h3>
+          <div className="hero__card">
+            <p className="hero__alternance-label">Stage disponible</p>
+            <h3 className="hero__card-title">Mi-juin<br />Fin sept.</h3>
+            <p className="hero__alternance-sub">Stage informatique</p>
             <div className="hero__alternance-details">
               <div className="hero__alternance-item">
                 <span className="hero__alternance-value">~3 mois</span>
                 <span className="hero__alternance-key">Durée du stage</span>
               </div>
             </div>
+            <a href="/cv.pdf" download="cv-loulia-tsui.pdf" className="btn btn-ghost hero__alternance-btn">
+              Mon CV — Stage
+            </a>
           </div>
 
-          <div className="hero__alternance-card">
+          <div className="hero__card hero__card--accent">
             <p className="hero__alternance-label">Disponible dès</p>
-            <h3 className="hero__alternance-title">Octobre 2026</h3>
+            <h3 className="hero__card-title">Octobre<br />2026</h3>
             <p className="hero__alternance-sub">Recherche alternance</p>
             <div className="hero__alternance-details">
               <div className="hero__alternance-item">
@@ -62,9 +66,8 @@ export default function Hero() {
                 <span className="hero__alternance-key">Durée du contrat</span>
               </div>
             </div>
-            <p className="hero__alternance-cta-label">Travaillons ensemble</p>
             <a href="/cv.pdf" download="cv-loulia-tsui.pdf" className="btn btn-primary hero__alternance-btn">
-              Télécharger mon CV
+              Mon CV — Alternance
             </a>
           </div>
 
