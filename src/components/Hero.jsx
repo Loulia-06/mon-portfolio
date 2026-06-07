@@ -38,7 +38,7 @@ export default function Hero() {
         <div className="hero__deco fade-up" style={{ animationDelay: '0.2s' }}>
           <div className="hero__alternance-card">
             <p className="hero__alternance-label">Disponible dès</p>
-            <h3 className="hero__alternance-title">Septembre 2026</h3>
+            <h3 className="hero__alternance-title">Octobre 2026</h3>
             <p className="hero__alternance-sub">Recherche alternance</p>
             <div className="hero__alternance-details">
               <div className="hero__alternance-item">
