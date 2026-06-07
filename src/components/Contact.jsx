@@ -11,16 +11,17 @@ export default function Contact() {
             Travaillons<br /><em>ensemble</em>
           </h2>
           <p>
-            Je suis à la recherche d'une alternance à partir d'<strong>octobre 2026</strong>,
-            sur un rythme de <strong>2 semaines en entreprise / 1 semaine à l'école</strong>.
-             <strong> Contrat d'apprentissage d'une durée de 1 an ou 3 ans</strong>.
+            Je suis disponible pour un <strong>stage dès mi-juin</strong> jusqu'à fin septembre (~2 ou 3 mois),
+            et je recherche une <strong>alternance à partir d'octobre 2026</strong> sur un rythme de 2 semaines en entreprise / 1 semaine à l'école (1 an ou 3 ans).
           </p>
-          <p>
-            Tu as une opportunité ou tu veux simplement échanger ? Écris-moi.
-          </p>
-          <a href="/cv.pdf" download="cv-loulia-tsui.pdf" className="btn btn-primary" style={{ marginTop: '1rem' }}>
-            Télécharger mon CV
-          </a>
+          <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginTop: '1rem' }}>
+            <a href="/cv_loulia_tsui_stage.pdf" download="cv-loulia-tsui-stage.pdf" className="btn btn-ghost">
+              Mon CV — Stage
+            </a>
+            <a href="/cv.pdf" download="cv-loulia-tsui.pdf" className="btn btn-primary">
+              Mon CV — Alternance
+            </a>
+          </div>
         </div>
 
         <div className="contact__links fade-up" style={{ animationDelay: '0.15s' }}>
