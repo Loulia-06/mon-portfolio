@@ -18,7 +18,7 @@ export default function Contact() {
             <a href="/cv_loulia_tsui_stage.pdf" download="cv-loulia-tsui-stage.pdf" className="btn btn-primary">
               Mon CV — Stage
             </a>
-            <a href="/cv.pdf" download="cv-loulia-tsui.pdf" className="btn btn-primary">
+            <a href="/cv_loulia_tsui_alternance.pdf" download="cv-loulia-tsui-alternance.pdf" className="btn btn-primary">
               Mon CV — Alternance
             </a>
           </div>

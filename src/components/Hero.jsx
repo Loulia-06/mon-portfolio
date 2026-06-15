@@ -66,7 +66,7 @@ export default function Hero() {
                 <span className="hero__alternance-key">Durée du contrat</span>
               </div>
             </div>
-            <a href="/cv.pdf" download="cv-loulia-tsui.pdf" className="btn btn-primary hero__alternance-btn">
+            <a href="/cv_loulia_tsui_alternance.pdf" download="cv-loulia-tsui-alternance.pdf" className="btn btn-primary hero__alternance-btn">
               Mon CV — Alternance
             </a>
           </div>

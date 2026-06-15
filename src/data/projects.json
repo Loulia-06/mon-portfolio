@@ -1,5 +1,84 @@
 [
   {
+    "id": "Projet PHP",
+    "title": "Projet PHP B2",
+    "category": "projets",
+    "path": "projets-complets/Projet PHP",
+    "lang": "Divers",
+    "level": "débutant",
+    "date": "2026-06",
+    "description": "Développer en équipe de 3 un site e-commerce permettant la vente de vêtements entre utilisateurs, avec un espace client, un espace administrateur, un panier, un système de paiement et la génération automatique de factures.\n\n---",
+    "whatILearned": "Dans ce projet, je me suis occupée de la partie **front-end** : les vues PHP, la mise en page, le CSS et toutes les interfaces utilisateur (formulaires, pages produits, panier, espace admin). J'ai aussi donné un coup de main sur d'autres tâches au fil du projet.\n\n---\n\n**C'est quoi l'architecture MVC ?**\n\nQuand on développe une application web, on pourrait tout mettre dans un seul fichier : la connexion à la base de données, les calculs, et l'affichage. Ça fonctionnerait, mais très vite le code devient impossible à lire et à maintenir.\n\nL'architecture MVC — **Modèle, Vue, Contrôleur** — résout ce problème en découpant l'application en trois parties avec des rôles bien séparés :\n\n- **Modèle** → gère les données. C'est lui qui parle à la base de données (récupérer un article, enregistrer une commande, etc.)\n- **Vue** → gère l'affichage. C'est la page HTML/PHP que l'utilisateur voit dans son navigateur. Elle ne sait pas d'où viennent les données — elle les affiche, c'est tout.\n- **Contrôleur** → fait le lien. Quand un utilisateur clique sur \"Ajouter au panier\", c'est le contrôleur qui reçoit la demande, interroge le modèle, et envoie le résultat à la vue.\n\nConcrètement dans ce projet : quand un utilisateur visite la page d'un article, le contrôleur reçoit la requête, demande au modèle les infos de l'article, et les transmet à la vue qui les affiche.\n\n---\n\nMe concentrer uniquement sur la vue m'a appris à travailler dans une architecture que je ne contrôlais pas entièrement — utiliser les données transmises par les contrôleurs sans toucher à la logique métier. Un vrai exercice de collaboration.\n\n---",
+    "notions": [
+      "Architecture MVC en PHP",
+      "Vues PHP dynamiques (partiels, templates)",
+      "HTML/CSS — mise en page, formulaires",
+      "Connexion PDO à une base de données MySQL",
+      "Gestion de sessions (connexion, panier)",
+      "Validation de formulaires côté serveur",
+      "Génération de factures automatique",
+      "Collaboration en équipe avec GitHub",
+      "--"
+    ],
+    "techs": [
+      "Divers"
+    ],
+    "schema": "projet-php-b2/\n├── src/\n│   ├── config/         → connexion PDO à la base de données\n│   ├── controllers/    → logique métier et routage\n│   ├── models/         → représentation des entités\n│   ├── Repositories/   → requêtes SQL et accès aux données\n│   ├── Services/       → logique métier avancée\n│   ├── Utils/          → utilitaires (logger, etc.)\n│   ├── Validators/     → validation des formulaires\n│   └── views/          → pages PHP dynamiques ← mon périmètre principal\n├── public/             → CSS, images ← mon périmètre principal\n├── sql/                → script de création de la base\n├── logs/               → logs d'activité\n└── index.php           → point d'entrée (routeur)",
+    "screenshots": [
+      "https://raw.githubusercontent.com/Loulia-06/dev-learning-portfolio/main/projets-complets/Projet%20PHP/screenshots/accueil.png",
+      "https://raw.githubusercontent.com/Loulia-06/dev-learning-portfolio/main/projets-complets/Projet%20PHP/screenshots/articles.png",
+      "https://raw.githubusercontent.com/Loulia-06/dev-learning-portfolio/main/projets-complets/Projet%20PHP/screenshots/articles-filtres.png",
+      "https://raw.githubusercontent.com/Loulia-06/dev-learning-portfolio/main/projets-complets/Projet%20PHP/screenshots/panier.png"
+    ],
+    "videoUrl": null,
+    "demoUrl": null,
+    "repoLinks": [
+      {
+        "label": "projet-php-b2",
+        "url": "https://github.com/neotxt/projet-php-b2"
+      }
+    ],
+    "githubUrl": "https://github.com/Loulia-06/dev-learning-portfolio/tree/main/projets-complets/Projet PHP",
+    "highlight": false
+  },
+  {
+    "id": "Projet SQL",
+    "title": "Projet SQL",
+    "category": "projets",
+    "path": "projets-complets/Projet SQL",
+    "lang": "Divers",
+    "level": "débutant",
+    "date": "2026-06",
+    "description": "Concevoir et implémenter une base de données PostgreSQL complète pour cIAra Mobility, une start-up de location de véhicules électriques partagés (voitures, trottinettes, scooters, vélos).\n\nLa base de données gère : la flotte de véhicules, les stations et bornes de recharge, les clients, les réservations, les paiements et la maintenance.\n\n---",
+    "whatILearned": "Concevoir une base de données relationnelle de A à Z en partant d'un besoin métier réel. J'ai appris à modéliser avec Merise avant d'écrire une seule ligne de SQL, ce qui m'a aidée à structurer ma pensée. Les triggers et fonctions PostgreSQL m'ont montré qu'une base de données peut contenir de la logique métier, pas seulement des données.\n\nC'était mon premier projet SQL — et aussi mes premiers pas sur GitHub. La structure du repo et la documentation n'étaient pas encore mes points forts à l'époque. Aujourd'hui je sais ce que j'aurais fait différemment : des commits plus réguliers, un README dès le début, et une organisation des dossiers pensée dès le départ.\n\n---",
+    "notions": [
+      "Modélisation Merise (MCD et MLD)",
+      "Création de tables avec contraintes (PRIMARY KEY, FOREIGN KEY, CHECK, NOT NULL)",
+      "Requêtes SQL avancées : SELECT, JOIN, sous-requêtes, agrégations",
+      "Vues, triggers et fonctions PostgreSQL",
+      "Import de données CSV via pgAdmin",
+      "Gestion de versions avec GitHub",
+      "--"
+    ],
+    "techs": [
+      "Divers"
+    ],
+    "schema": "projet-sql-ciara-mobility/\n├── documents/\n│   └── docs/\n│       ├── Dictionnaire_de_données.pdf     → dictionnaire complet des attributs\n│       ├── MLD.pdf                         → Modèle Logique de Données\n│       ├── liste(entités,attributs...).pdf  → liste des entités et attributs\n│       └── model conceptuel des données.pdf → MCD (Modèle Conceptuel)\n├── sql/\n│   ├── create_tables.sql                   → structure de la base + données test\n│   ├── queries.sql                         → 10+ requêtes documentées\n│   └── README.md",
+    "screenshots": [
+      "https://raw.githubusercontent.com/Loulia-06/dev-learning-portfolio/main/projets-complets/Projet%20SQL/screenshots/mcd.pdf"
+    ],
+    "videoUrl": null,
+    "demoUrl": null,
+    "repoLinks": [
+      {
+        "label": "projet_SQL_b2",
+        "url": "https://github.com/Loulia-06/projet_SQL_b2"
+      }
+    ],
+    "githubUrl": "https://github.com/Loulia-06/dev-learning-portfolio/tree/main/projets-complets/Projet SQL",
+    "highlight": false
+  },
+  {
     "id": "exo1-decouverte",
     "title": "Exo 1",
     "category": "backend",
@@ -63,85 +142,6 @@
     "demoUrl": null,
     "repoLinks": [],
     "githubUrl": "https://github.com/Loulia-06/dev-learning-portfolio/tree/main/backend/api-rest/exo2-bibliotheque",
-    "highlight": false
-  },
-  {
-    "id": "Projet PHP",
-    "title": "Projet PHP B2",
-    "category": "projets",
-    "path": "projets-complets/Projet PHP",
-    "lang": "Divers",
-    "level": "débutant",
-    "date": "2026-05",
-    "description": "Développer en équipe de 3 un site e-commerce permettant la vente de vêtements entre utilisateurs, avec un espace client, un espace administrateur, un panier, un système de paiement et la génération automatique de factures.\n\n---",
-    "whatILearned": "Dans ce projet, je me suis occupée de la partie **front-end** : les vues PHP, la mise en page, le CSS et toutes les interfaces utilisateur (formulaires, pages produits, panier, espace admin). J'ai aussi donné un coup de main sur d'autres tâches au fil du projet.\n\n---\n\n**C'est quoi l'architecture MVC ?**\n\nQuand on développe une application web, on pourrait tout mettre dans un seul fichier : la connexion à la base de données, les calculs, et l'affichage. Ça fonctionnerait, mais très vite le code devient impossible à lire et à maintenir.\n\nL'architecture MVC — **Modèle, Vue, Contrôleur** — résout ce problème en découpant l'application en trois parties avec des rôles bien séparés :\n\n- **Modèle** → gère les données. C'est lui qui parle à la base de données (récupérer un article, enregistrer une commande, etc.)\n- **Vue** → gère l'affichage. C'est la page HTML/PHP que l'utilisateur voit dans son navigateur. Elle ne sait pas d'où viennent les données — elle les affiche, c'est tout.\n- **Contrôleur** → fait le lien. Quand un utilisateur clique sur \"Ajouter au panier\", c'est le contrôleur qui reçoit la demande, interroge le modèle, et envoie le résultat à la vue.\n\nConcrètement dans ce projet : quand un utilisateur visite la page d'un article, le contrôleur reçoit la requête, demande au modèle les infos de l'article, et les transmet à la vue qui les affiche.\n\n---\n\nMe concentrer uniquement sur la vue m'a appris à travailler dans une architecture que je ne contrôlais pas entièrement — utiliser les données transmises par les contrôleurs sans toucher à la logique métier. Un vrai exercice de collaboration.\n\n---",
-    "notions": [
-      "Architecture MVC en PHP",
-      "Vues PHP dynamiques (partiels, templates)",
-      "HTML/CSS — mise en page, formulaires",
-      "Connexion PDO à une base de données MySQL",
-      "Gestion de sessions (connexion, panier)",
-      "Validation de formulaires côté serveur",
-      "Génération de factures automatique",
-      "Collaboration en équipe avec GitHub",
-      "--"
-    ],
-    "techs": [
-      "Divers"
-    ],
-    "schema": "projet-php-b2/\n├── src/\n│   ├── config/         → connexion PDO à la base de données\n│   ├── controllers/    → logique métier et routage\n│   ├── models/         → représentation des entités\n│   ├── Repositories/   → requêtes SQL et accès aux données\n│   ├── Services/       → logique métier avancée\n│   ├── Utils/          → utilitaires (logger, etc.)\n│   ├── Validators/     → validation des formulaires\n│   └── views/          → pages PHP dynamiques ← mon périmètre principal\n├── public/             → CSS, images ← mon périmètre principal\n├── sql/                → script de création de la base\n├── logs/               → logs d'activité\n└── index.php           → point d'entrée (routeur)",
-    "screenshots": [
-      "https://raw.githubusercontent.com/Loulia-06/dev-learning-portfolio/main/projets-complets/Projet%20PHP/screenshots/accueil.png",
-      "https://raw.githubusercontent.com/Loulia-06/dev-learning-portfolio/main/projets-complets/Projet%20PHP/screenshots/articles.png",
-      "https://raw.githubusercontent.com/Loulia-06/dev-learning-portfolio/main/projets-complets/Projet%20PHP/screenshots/articles-filtres.png",
-      "https://raw.githubusercontent.com/Loulia-06/dev-learning-portfolio/main/projets-complets/Projet%20PHP/screenshots/panier.png"
-    ],
-    "videoUrl": null,
-    "demoUrl": null,
-    "repoLinks": [
-      {
-        "label": "projet-php-b2",
-        "url": "https://github.com/neotxt/projet-php-b2"
-      }
-    ],
-    "githubUrl": "https://github.com/Loulia-06/dev-learning-portfolio/tree/main/projets-complets/Projet PHP",
-    "highlight": false
-  },
-  {
-    "id": "Projet SQL",
-    "title": "Projet SQL",
-    "category": "projets",
-    "path": "projets-complets/Projet SQL",
-    "lang": "Divers",
-    "level": "débutant",
-    "date": "2026-05",
-    "description": "Concevoir et implémenter une base de données PostgreSQL complète pour cIAra Mobility, une start-up de location de véhicules électriques partagés (voitures, trottinettes, scooters, vélos).\n\nLa base de données gère : la flotte de véhicules, les stations et bornes de recharge, les clients, les réservations, les paiements et la maintenance.\n\n---",
-    "whatILearned": "Concevoir une base de données relationnelle de A à Z en partant d'un besoin métier réel. J'ai appris à modéliser avec Merise avant d'écrire une seule ligne de SQL, ce qui m'a aidée à structurer ma pensée. Les triggers et fonctions PostgreSQL m'ont montré qu'une base de données peut contenir de la logique métier, pas seulement des données.\n\nC'était mon premier projet SQL — et aussi mes premiers pas sur GitHub. La structure du repo et la documentation n'étaient pas encore mes points forts à l'époque. Aujourd'hui je sais ce que j'aurais fait différemment : des commits plus réguliers, un README dès le début, et une organisation des dossiers pensée dès le départ.\n\n---",
-    "notions": [
-      "Modélisation Merise (MCD et MLD)",
-      "Création de tables avec contraintes (PRIMARY KEY, FOREIGN KEY, CHECK, NOT NULL)",
-      "Requêtes SQL avancées : SELECT, JOIN, sous-requêtes, agrégations",
-      "Vues, triggers et fonctions PostgreSQL",
-      "Import de données CSV via pgAdmin",
-      "Gestion de versions avec GitHub",
-      "--"
-    ],
-    "techs": [
-      "Divers"
-    ],
-    "schema": "projet-sql-ciara-mobility/\n├── documents/\n│   └── docs/\n│       ├── Dictionnaire_de_données.pdf     → dictionnaire complet des attributs\n│       ├── MLD.pdf                         → Modèle Logique de Données\n│       ├── liste(entités,attributs...).pdf  → liste des entités et attributs\n│       └── model conceptuel des données.pdf → MCD (Modèle Conceptuel)\n├── sql/\n│   ├── create_tables.sql                   → structure de la base + données test\n│   ├── queries.sql                         → 10+ requêtes documentées\n│   └── README.md",
-    "screenshots": [
-      "https://raw.githubusercontent.com/Loulia-06/dev-learning-portfolio/main/projets-complets/Projet%20SQL/screenshots/mcd.pdf"
-    ],
-    "videoUrl": null,
-    "demoUrl": null,
-    "repoLinks": [
-      {
-        "label": "projet_SQL_b2",
-        "url": "https://github.com/Loulia-06/projet_SQL_b2"
-      }
-    ],
-    "githubUrl": "https://github.com/Loulia-06/dev-learning-portfolio/tree/main/projets-complets/Projet SQL",
     "highlight": false
   },
   {
